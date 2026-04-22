@@ -67,3 +67,28 @@ function switchNight() {
 
 findNightIcon();
 applyNight(isNight);
+
+// 更新导航栏选中状态
+function updateNavbarActive() {
+    const currentPath = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+    // 只选择导航菜单中的项，不包括 logo 和右侧图标
+    document.querySelectorAll('.navbar-main .navbar-start .navbar-item').forEach(item => {
+        const href = item.getAttribute('href');
+        if (href) {
+            const itemPath = href.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+            if (itemPath === currentPath) {
+                item.classList.add('is-active');
+            } else {
+                item.classList.remove('is-active');
+            }
+        }
+    });
+}
+
+// 页面加载完成后更新选中状态
+updateNavbarActive();
+
+// 监听 pjax 完成事件
+document.addEventListener('pjax:complete', function() {
+    updateNavbarActive();
+});

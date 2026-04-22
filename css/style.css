@@ -11735,6 +11735,35 @@ article.article .article-meta {
 .navbar.is-fixed-top {
   z-index: 100;
 }
+.navbar-main {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+.navbar-main .navbar-logo,
+.navbar-main .navbar-item,
+.navbar-main .navbar-item i {
+  color: #fff !important;
+}
+.navbar-main .navbar-item:hover,
+.navbar-main a.navbar-item:focus,
+.navbar-main .navbar-item:focus {
+  background: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+}
+.navbar-main a.navbar-item.is-active,
+.navbar-main .navbar-item.is-active {
+  background: rgba(59,130,246,0.3) !important;
+  color: #fff !important;
+}
+.navbar-main a.navbar-item.is-active:hover,
+.navbar-main a.navbar-item.is-active:focus,
+.navbar-main .navbar-item.is-active:hover,
+.navbar-main .navbar-item.is-active:focus {
+  background: rgba(59,130,246,0.4) !important;
+  color: #fff !important;
+}
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
   .is-2-column .container,
@@ -12297,6 +12326,13 @@ select,
 textarea {
   font-family: AlimamaFangYuanTi, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
 }
+body {
+  background-image: url("/img/blog-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 .img-x {
   position: relative;
   overflow-y: hidden;
@@ -12598,7 +12634,7 @@ textarea {
   overflow: auto;
 }
 .navbar-highlight {
-  background-color: #fff !important;
+  background: transparent !important;
 }
 .gt-container .gt-comment-owner {
   padding: 0.2em 0.2em !important;
